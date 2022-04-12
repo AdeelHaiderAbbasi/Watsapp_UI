@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Main(),
     );
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
 }
 
 class Main extends StatefulWidget {
-  Main({Key? key}) : super(key: key);
+  const Main({Key? key}) : super(key: key);
 
   @override
   _MainState createState() => _MainState();
@@ -44,7 +44,7 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
       child: Scaffold(
         appBar: AppBar(
           titleSpacing: 10,
-          title: Text(
+          title: const Text(
             "WhatsApp UI",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
           ),
@@ -52,17 +52,17 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
           actions: [
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.search),
+              icon: const Icon(Icons.search),
             ),
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.more_vert),
+              icon: const Icon(Icons.more_vert),
             ),
           ],
           bottom: TabBar(
             controller: _tabcontroller,
             indicatorColor: Colors.white,
-            tabs: [
+            tabs: const [
               Tab(
                 icon: Icon(
                   Icons.photo_camera_rounded,
@@ -99,7 +99,7 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
 //*********************
   camerapge(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         height: double.infinity,
         width: double.infinity,
         child: Center(
@@ -112,18 +112,19 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
                     width: double.infinity,
                     height: 100,
                     color: Colors.teal,
-                    child: Icon(
+                    child: const Icon(
                       Icons.photo_camera,
                       color: Colors.white,
                       size: 40,
                     ),
                   ),
                   titlePadding: EdgeInsets.zero,
-                  content: Text(
+                  content: const Text(
                     "To Capture photos and videos, allow WhatsApp access to your camera.",
                     style: TextStyle(fontSize: 15),
                   ),
-                  contentPadding: EdgeInsets.only(left: 10, right: 5, top: 20),
+                  contentPadding:
+                      const EdgeInsets.only(left: 10, right: 5, top: 20),
                   actions: [
                     TextButton(
                       onPressed: () {
@@ -171,16 +172,16 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => SelectContact(),
+              builder: (context) => const SelectContact(),
             ),
           );
         },
         backgroundColor: Colors.teal[500],
         elevation: 6,
-        child: Icon(Icons.message),
+        child: const Icon(Icons.message),
       ),
       body: ListView(
-        children: [
+        children: const [
           Contact(
             profile:
                 "https://i.pinimg.com/564x/97/e4/2a/97e42a82fc7911961d3ca55f54d1372c.jpg",
@@ -375,7 +376,7 @@ statuspage(BuildContext context, TabController _tabcontroller) {
     floatingActionButton: Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        Container(
+        SizedBox(
           width: 45,
           height: 45,
           child: FloatingActionButton(
@@ -387,7 +388,7 @@ statuspage(BuildContext context, TabController _tabcontroller) {
                 color: Colors.grey[600],
               )),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         FloatingActionButton(
@@ -399,18 +400,19 @@ statuspage(BuildContext context, TabController _tabcontroller) {
                   width: double.infinity,
                   height: 100,
                   color: Colors.teal,
-                  child: Icon(
+                  child: const Icon(
                     Icons.photo_camera,
                     color: Colors.white,
                     size: 40,
                   ),
                 ),
                 titlePadding: EdgeInsets.zero,
-                content: Text(
+                content: const Text(
                   "To Capture photos and videos, allow WhatsApp access to your camera.",
                   style: TextStyle(fontSize: 15),
                 ),
-                contentPadding: EdgeInsets.only(left: 10, right: 5, top: 20),
+                contentPadding:
+                    const EdgeInsets.only(left: 10, right: 5, top: 20),
                 actions: [
                   TextButton(
                     onPressed: () {
@@ -437,13 +439,13 @@ statuspage(BuildContext context, TabController _tabcontroller) {
           },
           backgroundColor: Colors.teal[500],
           elevation: 4,
-          child: Icon(Icons.camera_alt_rounded),
+          child: const Icon(Icons.camera_alt_rounded),
         ),
       ],
     ),
     body: ListView(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         InkWell(
@@ -454,17 +456,17 @@ statuspage(BuildContext context, TabController _tabcontroller) {
               width: 50,
               decoration: BoxDecoration(
                   shape: BoxShape.circle, color: Colors.grey[400]),
-              child: Icon(
+              child: const Icon(
                 Icons.person,
                 color: Colors.white,
                 size: 40,
               ),
             ),
-            title: Text(
+            title: const Text(
               "My status",
               style: TextStyle(fontWeight: FontWeight.w700),
             ),
-            subtitle: Text(
+            subtitle: const Text(
               "Tap to add status update",
             ),
           ),
@@ -479,14 +481,14 @@ statuspage(BuildContext context, TabController _tabcontroller) {
                 color: Colors.grey[700]),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Column(
           children: [
             InkWell(
               onTap: () {},
-              child: ListTile(
+              child: const ListTile(
                 leading: CircleAvatar(
                   radius: 25,
                   backgroundImage: NetworkImage(
@@ -518,19 +520,19 @@ callspage(BuildContext context) {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => SelectContactOfCalls(),
+            builder: (context) => const SelectContactOfCalls(),
           ),
         );
       },
       backgroundColor: Colors.teal[500],
       elevation: 6,
-      child: Icon(Icons.add_call),
+      child: const Icon(Icons.add_call),
     ),
     body: Padding(
-      padding: EdgeInsets.only(top: 160),
+      padding: const EdgeInsets.only(top: 160),
       child: TweenAnimationBuilder(
         tween: Tween<double>(begin: 0, end: 1),
-        duration: Duration(milliseconds: 500),
+        duration: const Duration(milliseconds: 500),
         builder: (BuildContext context, double _value, child) {
           return Opacity(
             opacity: _value,
@@ -540,7 +542,7 @@ callspage(BuildContext context) {
             ),
           );
         },
-        child: Container(
+        child: SizedBox(
             width: double.infinity,
             child: RichText(
               textAlign: TextAlign.center,
@@ -550,7 +552,7 @@ callspage(BuildContext context) {
                   color: Colors.grey[600],
                 ),
                 children: [
-                  TextSpan(
+                  const TextSpan(
                     text: "To start calling contacts who have\n WhatsApp, tap ",
                   ),
                   WidgetSpan(
@@ -560,7 +562,7 @@ callspage(BuildContext context) {
                       color: Colors.grey[600],
                     ),
                   ),
-                  TextSpan(
+                  const TextSpan(
                     text: " at the bottom of your\n screen.",
                   ),
                 ],
@@ -573,13 +575,14 @@ callspage(BuildContext context) {
 
 // *CONTACT(CHATPAGE) CLASS FOR LISTTILE DETAILS
 class Contact extends StatelessWidget {
-  Contact({
+  const Contact({
+    Key? key,
     required this.profile,
     required this.time,
     required this.name,
     required this.mes,
     required this.icon,
-  });
+  }) : super(key: key);
 
   final String profile;
   final Text time;
@@ -599,12 +602,12 @@ class Contact extends StatelessWidget {
         trailing: time,
         title: Text(
           name,
-          style: TextStyle(fontWeight: FontWeight.w600),
+          style: const TextStyle(fontWeight: FontWeight.w600),
         ),
         subtitle: Row(
           children: [
             icon,
-            SizedBox(
+            const SizedBox(
               width: 5,
             ),
             Text(mes),
