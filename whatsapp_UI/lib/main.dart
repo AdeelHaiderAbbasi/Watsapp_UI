@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors_in_immutables, prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, use_key_in_widget_constructors
-
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/screens/select_contact.dart';
 import 'package:whatsapp_clone/screens/select_contact_calls_section.dart';
@@ -29,8 +27,7 @@ class Main extends StatefulWidget {
 
 ///////////////////////////////
 //////////////////////////////
-///
-///
+
 class _MainState extends State<Main> with SingleTickerProviderStateMixin {
   late TabController _tabcontroller;
 
@@ -96,6 +93,7 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
     );
   }
 
+/////////////////////////////
 //*********************
 //*CAMERA PAGE COMPONENTS
 //*********************
